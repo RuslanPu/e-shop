@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>магазин</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.6.55/css/materialdesignicons.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/fontawesome.min.css" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-line-icons@2.5.5/css/simple-line-icons.min.css">
+    <link rel="stylesheet" th:href="@{css_admin/vendor.bundle.base.css}">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{css_admin/fontawesome-stars.css}">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" th:href="@{css_admin/style.css}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-line-icons@2.5.5/css/simple-line-icons.min.css">
+    <!-- endinject -->
+
+    <link rel="shortcut icon" th:href="@{images/favicon.png}">
+</head>
+<body class="sidebar-dark">
+<div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <nav  class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row" th:replace="~{fragments-admin/fragments :: header}"></nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_settings-panel.html -->
+        <div class="theme-setting-wrapper" th:replace="~{fragments-admin/fragments :: theme-setting}"></div>
+        <div th:replace="~{fragments-admin/fragments :: right-sidebar}"></div>
+        <!-- partial -->
+        <!-- partial:partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar" th:replace="~{fragments-admin/fragments :: sidebar}"></nav>
+        <!-- partial -->
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="container">
+                    <h3>Товар</h3>
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addProductModal">
+                        Добавить
+                    </button>
+                    <div class="row rowForAddBanner">
+                        <div class="col-sm-4" th:each="product : ${productList}">
+                            <div class="card" >
+                                <img th:each="image : ${listImages}" th:object="${image}" th:if="${image.productId} == ${product.id}" th:src="@{files/{id}(id=*{imageId})}" class="card-img-top" alt="...">
+
+                                <div class="card-body">
+
+                                    <p id="name" th:text="'Название товара : ' + ${product.name}"></p>
+
+                                    <div class="btn-group" role="group">
+                                        <a href="#" class="btn_edit_product btn btn-primary" data-toggle="modal"
+                                           data-target="#editProduct" th:data="${product.id}">Редактирование</a>
+
+
+                                        <a href="#" class="btn btn-danger btnDeleteProduct" data-toggle="modal"
+                                           data-target="#deleteProduct" th:data="${product.id}">Удалить</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+            <!-- content-wrapper ends -->
+            <!-- partial:partials/_footer.html -->
+            <footer class="footer" th:replace="~{fragments-admin/fragments :: footer}"></footer>
+            <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+</div>
+<div th:replace="~{fragments-admin/fragments :: modal}"></div>
+<!-- container-scroller -->
+<div th:replace="~{fragments-admin/fragments :: script}"></div>
+</body>
+
+
+
+</html>
+
