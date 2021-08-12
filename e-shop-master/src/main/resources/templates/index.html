@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html xmlns:th="http://www.thymeleaf.org" class="no-js">
+<!--<![endif]-->
+
+
+
+<head>
+    <title>AirCool</title>
+    <meta charset="utf-8">
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <![endif]-->
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/main.css" class="color-switcher-link">
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="js/vendor/html5shiv.min.js"></script>
+    <script src="js/vendor/respond.min.js"></script>
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+<!--[if lt IE 9]>
+<div class="bg-danger text-center">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" class="highlight">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+
+<!-- search modal -->
+<div class="modal" tabindex="-1" role="dialog" aria-labelledby="search_modal" id="search_modal">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">
+				<i class="rt-icon2-cross2"></i>
+			</span>
+    </button>
+    <div class="widget widget_search">
+        <form method="get" class="searchform search-form form-inline" action="http://html.modernwebtemplates.com/aircool/">
+            <div class="form-group">
+                <input type="text" value="" name="search" class="form-control" placeholder="Search keyword" id="modal-search-input">
+            </div>
+            <button type="submit" class="theme_button">Search</button>
+        </form>
+    </div>
+</div>
+
+<!-- Unyson messages modal -->
+<div class="modal fade" tabindex="-1" role="dialog" id="messages_modal">
+    <div class="fw-messages-wrap ls with_padding">
+
+    </div>
+</div>
+<!-- eof .modal -->
+
+<!-- wrappers for visual page editor and boxed version of template -->
+<div id="canvas">
+    <div id="box_wrapper">
+
+        <!-- template sections -->
+
+    <div th:replace="~{fragments-main/fragments :: logo}"></div>
+    <header class="page_header header_white toggler_left with_top_border" th:replace="~{fragments-main/fragments :: header}"></header>
+        <header class="page_header header_white toggler_left with_top_border">
+
+        </header>
+
+        <section class="intro_section page_mainslider ds">
+            <div class="flexslider" data-dots="false">
+                <!-- slider -->
+
+                <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="images/slide1.jpg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5 class="slider-caption">Заголовок для первого слайда</h5>
+                                <p class="slider-text">Some representative placeholder content for the first slide.</p>
+                            </div>
+                        </div>
+<!--                        <div class="carousel-item">-->
+<!--                            <img src="images/slide2.jpg" class="d-block w-100" alt="...">-->
+<!--                            <div class="carousel-caption d-none d-md-block">-->
+<!--                                <h5 class="slider-caption">Заголовок для второго слайда</h5>-->
+<!--                                <p class="slider-text">Some representative placeholder content for the second slide.</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="carousel-item">-->
+<!--                            <img src="images/slide3.jpg" class="d-block w-100" alt="...">-->
+<!--                            <div class="carousel-caption d-none d-md-block">-->
+<!--                                <h5 class="slider-caption">Заголовок для третьего слайда</h5>-->
+<!--                                <p class="slider-text">Some representative placeholder content for the third slide.</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+            <!-- eof flexslider -->
+
+        </section>
+
+        <section class="ls ms section_padding_top_100 section_padding_bottom_75 columns_padding_25 columns_margin_bottom_30">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 to_animate" data-animation="pullUp">
+                        <div class="teaser text-center">
+                            <div class="teaser_icon main_bg_color hover-icon round size_small">
+                                <i class="fa fa-recycle" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="poppins hover-color2">
+                                <a href="#">Heating Water</a>
+                            </h4>
+                            <p>
+                                Guaranteed that all of your universal waste management is performed safely and responsibly.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 to_animate" data-animation="pullUp">
+                        <div class="teaser text-center">
+                            <div class="teaser_icon main_bg_color hover-icon round size_small">
+                                <i class="fa fa-volume-down" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="poppins hover-color2">
+                                <a href="#">Quiet Operations</a>
+                            </h4>
+                            <p>
+                                No sea takimata sanctus estlrem ipsum dolor amet consetetur sadipscing elitr
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 clear-sm to_animate" data-animation="pullUp">
+                        <div class="teaser text-center">
+                            <div class="teaser_icon main_bg_color hover-icon round size_small">
+                                <i class="fa fa-bars" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="poppins hover-color2">
+                                <a href="#">Wide Selection</a>
+                            </h4>
+                            <p>
+                                Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat sed
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 to_animate" data-animation="pullUp">
+                        <div class="teaser text-center">
+                            <div class="teaser_icon main_bg_color hover-icon round size_small">
+                                <i class="fa fa-leaf" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="poppins hover-color2">
+                                <a href="#">Energy Efficiency</a>
+                            </h4>
+                            <p>
+                                At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ls page_about section_padding_top_150 section_padding_bottom_150 background_cover">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-7 col-md-6 col-sm-offset-5 col-md-offset-6 to_animate" data-animation="fadeInRight">
+                        <h4 class="thin">Heating &amp; Air Conditioning</h4>
+                        <h2 class="section_header big">
+                            Family Business
+                        </h2>
+                        <p>
+                            AirCool Conditioning &amp; Heating specliazes in all HVAC-related services. We offer heating and air conditioning installations as well as all types of repairs. We also offer preventative plans like inspections for the Spring and Winter as well as yearly service agreements that includes all the top brands.
+                        </p>
+                        <div class="inline-teasers-wrap">
+                            <a href="about.html" class="theme_button color2 wide_button">About us</a>
+                            <div class="media small-teaser inline-block">
+                                <div class="media-left">
+                                    <i class="fa fa-phone highlight size_small" aria-hidden="true"></i>
+                                </div>
+                                <div class="media-body fontsize_20 medium grey">
+                                    01 123 456 789
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pickup" class="ds page_contact parallax section_padding_top_150 section_padding_bottom_150">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 text-center to_animate" data-animation="fadeInUp">
+                        <h2 class="section_header">Make an Appointment</h2>
+                        <p class="lightgrey underheading">Conditioning &amp; Heating</p>
+
+                        <form class="contact-form row columns_margin_bottom_20" method="post" action="http://html.modernwebtemplates.com/aircool/">
+
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="pickup-name">Full Name
+                                        <span class="required">*</span>
+                                    </label>
+                                    <i class="fa fa-user highlight2" aria-hidden="true"></i>
+                                    <input type="text" aria-required="true" size="30" value="" name="pickup-name" id="pickup-name" class="form-control" placeholder="Full Name">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="pickup-phone">Phone Number
+                                        <span class="required">*</span>
+                                    </label>
+                                    <i class="fa fa-phone highlight2" aria-hidden="true"></i>
+                                    <input type="text" aria-required="true" size="30" value="" name="pickup-phone" id="pickup-phone" class="form-control" placeholder="Phone Number">
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group select-group">
+                                    <label for="pickup-date">Date
+                                        <span class="required">*</span>
+                                    </label>
+                                    <i class="fa fa-calendar highlight2" aria-hidden="true"></i>
+                                    <select aria-required="true" id="pickup-date" name="pickup-date" class="choice empty form-control">
+                                        <option value="" disabled selected data-default>Date</option>
+                                        <option value="1306">13.06</option>
+                                        <option value="1406">14.06</option>
+                                        <option value="1506">15.06</option>
+                                        <option value="1606">16.06</option>
+                                        <option value="1706">17.06</option>
+                                        <option value="1806">18.06</option>
+                                        <option value="1906">19.06</option>
+                                        <option value="2006">20.06</option>
+                                    </select>
+                                    <i class="fa fa-angle-down theme_button" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group select-group">
+                                    <label for="pickup-time">Time
+                                        <span class="required">*</span>
+                                    </label>
+                                    <i class="fa fa-clock-o highlight2" aria-hidden="true"></i>
+                                    <select aria-required="true" id="pickup-time" name="pickup-time" class="choice empty form-control">
+                                        <option value="" disabled selected data-default>Time</option>
+                                        <option value="08am">8:00 AM</option>
+                                        <option value="09am">9:00 AM</option>
+                                        <option value="10am">10:00 AM</option>
+                                        <option value="11am">11:00 AM</option>
+                                        <option value="12am">12:00 PM</option>
+                                        <option value="13pm">13:00 PM</option>
+                                        <option value="14pm">14:00 PM</option>
+                                        <option value="15pm">15:00 PM</option>
+                                        <option value="16pm">16:00 PM</option>
+                                        <option value="17pm">17:00 PM</option>
+                                    </select>
+                                    <i class="fa fa-angle-down theme_button" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+
+                                <div class="form-group">
+                                    <label for="pickup-message">Message</label>
+                                    <i class="fa fa-pencil highlight2" aria-hidden="true"></i>
+                                    <textarea aria-required="true" rows="3" cols="45" name="pickup-message" id="pickup-message" class="form-control" placeholder="Message"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12">
+
+                                <div class="contact-form-submit topmargin_40">
+                                    <button type="submit" id="pickup-_submit" name="contact_submit" class="theme_button color1">Make appointment</button>
+                                </div>
+                            </div>
+
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="ls ms overflow_hidden half_section section_padding_top_100 section_padding_bottom_150 columns_padding_80">
+            <div class="image_cover image_cover_right">
+                <!-- you can put your image here instead of puting it in column-->
+                <img src="images/radiator.jpg" alt="">
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 to_animate" data-animation="fadeInLeft">
+
+                        <h2 class="section_header with_sun_icon highlight2">
+                            Air Heating Service
+                        </h2>
+
+                        <div class="media big-left-media lineheight-thin">
+                            <div class="media-left media-middle">
+                                <img src="images/heater-installation.jpg" class="round" alt="" />
+                            </div>
+                            <div class="media-body media-middle">
+                                <h4>Heater Installation</h4>
+                                <p>
+                                    AC Sure Plan is committed to providing the best heater installation service. We offer our clients the best options for heating units.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="media big-left-media lineheight-thin">
+                            <div class="media-left media-middle">
+                                <img src="images/heater-repair.jpg" class="round" alt="" />
+                            </div>
+                            <div class="media-body media-middle">
+                                <h4>Heater Repair</h4>
+                                <p>
+                                    AC Sure Plan is committed to providing the best heater installation service. We offer our clients the best options for heating units.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="media big-left-media lineheight-thin">
+                            <div class="media-left media-middle">
+                                <img src="images/heater-maintenance.jpg" class="round" alt="" />
+                            </div>
+                            <div class="media-body media-middle">
+                                <h4>Heater Maintenance</h4>
+                                <p>
+                                    AC Sure Plan is committed to providing the best heater installation service. We offer our clients the best options for heating units.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- .col-* -->
+
+                    <div class="col-md-6">
+                        <!-- <img src="images/radiator.jpg" alt=""> -->
+                    </div>
+                    <!-- .col-* -->
+
+
+                </div>
+            </div>
+        </section>
+
+        <section class="ls ms overflow_hidden half_section section_padding_top_100 section_padding_bottom_150 columns_padding_80">
+            <div class="image_cover image_cover_left">
+                <!-- you can put your image here instead of puting it in column-->
+                <img src="images/condition.jpg" alt="">
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <!-- <img src="images/condition.jpg" alt=""> -->
+                    </div>
+                    <!-- .col-* -->
+
+                    <div class="col-md-6 to_animate" data-animation="fadeInRight">
+
+                        <h2 class="section_header with_snowflake_icon highlight">
+                            Air Conditioning Service
+                        </h2>
+
+                        <div class="media big-left-media lineheight-thin">
+                            <div class="media-left media-middle">
+                                <img src="images/condition-installation.jpg" class="round" alt="" />
+                            </div>
+                            <div class="media-body media-middle">
+                                <h4>Air Conditioning Installation</h4>
+                                <p>
+                                    We install state-of-the-art high efficiency residential air conditioning units that will save homeowners hundreds of dollars a year.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="media big-left-media lineheight-thin">
+                            <div class="media-left media-middle">
+                                <img src="images/condition-repair.jpg" class="round" alt="" />
+                            </div>
+                            <div class="media-body media-middle">
+                                <h4>Air Conditioning Repair</h4>
+                                <p>
+                                    Is your AC not working right this summer? Give us a call. We will take the time to properly diagnose your problem.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="media big-left-media lineheight-thin">
+                            <div class="media-left media-middle">
+                                <img src="images/condition-maintenance.jpg" class="round" alt="" />
+                            </div>
+                            <div class="media-body media-middle">
+                                <h4>Preventative Maintenance</h4>
+                                <p>
+                                    Our preventative maintenance service will save you thousands of dollars over the life of your air conditioner system.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- .col-* -->
+
+                </div>
+            </div>
+        </section>
+
+        <section id="news" class="ls section_padding_100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <h2 class="section_header">
+                            Our Latest News
+                        </h2>
+                        <p class="underheading">Blog Posts</p>
+                    </div>
+                </div>
+                <div class="row columns_margin_bottom_20 to_animate" data-animation="fadeInUp">
+                    <div class="col-md-4 col-sm-6">
+                        <article class="vertical-item content-padding with_border text-center rounded overflow-hidden">
+                            <div class="item-media">
+                                <img src="images/gallery/05.jpg" alt="">
+                                <div class="media-links">
+                                    <a href="blog-single-left.html" class="abs-link"></a>
+                                </div>
+                            </div>
+                            <div class="item-content">
+                                <h4 class="entry-title">
+                                    Finding the Best Oil Heaters for Your Home
+                                </h4>
+                                <p>
+                                    Unlike most wall heaters or portable heaters for that matter, an oil heater is heater ran by oil...
+                                </p>
+                                <p class="colorlinks small-text">
+                                    <a href="blog-single-left.html">read more</a>
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <article class="vertical-item content-padding with_border text-center rounded overflow-hidden">
+                            <div class="item-media">
+                                <img src="images/gallery/07.jpg" alt="">
+                                <div class="media-links">
+                                    <a href="blog-single-left.html" class="abs-link"></a>
+                                </div>
+                            </div>
+                            <div class="item-content">
+                                <h4 class="entry-title">
+                                    We pickup ewaste from businesses for free
+                                </h4>
+                                <p>
+                                    Believe it or not, indoor air quality is often worse than outdoor air quality. Outside, air is exposed to sunlight.
+                                </p>
+                                <p class="colorlinks small-text">
+                                    <a href="blog-single-left.html">read more</a>
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-sm-offset-3 col-md-offset-0">
+                        <article class="vertical-item content-padding with_border text-center rounded overflow-hidden">
+                            <div class="item-media">
+                                <img src="images/gallery/06.jpg" alt="">
+                                <div class="media-links">
+                                    <a href="blog-single-left.html" class="abs-link"></a>
+                                </div>
+                            </div>
+                            <div class="item-content">
+                                <h4 class="entry-title">
+                                    Electronics &amp; Computer Resale
+                                </h4>
+                                <p>
+                                    In a climate like southwest San Diego’s, even cooling and heating San Diego is a necessity for year-round home...
+                                </p>
+                                <p class="colorlinks small-text">
+                                    <a href="blog-single-left.html">read more</a>
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="row topmargin_30 to_animate" data-animation="fadeInUp">
+                    <div class="col-sm-12 text-center">
+                        <a href="blog-left.html" class="theme_button wide_button color1">Our blog</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="reviews" class="ds parallax page_testimonials section_padding_top_150 section_padding_bottom_150">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 text-center">
+
+                        <div class="owl-carousel testimonials-owl-carousel" data-responsive-lg="1" data-responsive-md="1" data-responsive-sm="1" data-dots="false" data-nav="true">
+
+                            <blockquote class="with_quotes text-center">
+                                <img src="images/faces/01.jpg" alt="" /> Needed to replace an old air conditioner for my 1940s home. AirCool provided a prompt quote and let me know what to expect during the whole process. I'd definitely hire them again or recommend to a friend.
+                                <div class="item-meta">
+                                    <h4 class="bottommargin_10">Timothy M. Keegan</h4>
+                                    <p class="small-text highlight">developer</p>
+                                </div>
+                            </blockquote>
+
+                            <blockquote class="with_quotes text-center">
+                                <img src="images/faces/02.jpg" alt="" /> Great service. Great product. Knowledgeable staff. The technicians came out went over all work and explained everything. They were very clean and left no traces. Everything that was installed was clean and had great fit/finish.
+                                <div class="item-meta">
+                                    <h4 class="bottommargin_10">Sarah Mooneyham</h4>
+                                    <p class="small-text highlight">CEO</p>
+                                </div>
+                            </blockquote>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="ls section_padding_top_150 section_padding_bottom_150">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <h2 class="section_header">
+                            FAQ
+                        </h2>
+                        <p class="underheading">Frequently Asked Questions</p>
+                    </div>
+                </div>
+                <div class="row columns_margin_top_60 to_animate" data-animation="fadeInUp">
+                    <div class="col-md-4">
+                        <div class="teaser with_border rounded text-center lineheight_thin">
+                            <div class="teaser_icon main_bg_color2 round offset_icon size_small">
+                                <span class="weight-black">?</span>
+                            </div>
+                            <h4 class="poppins">
+                                Lorem ipsum dolor sit amet consetetur sadipscing?
+                            </h4>
+                            <p>
+                                At vero eos et accusam et justo duo dolores rebum stet clita kasd gubergren, no sea takimata sanctus.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="teaser with_border rounded text-center lineheight_thin">
+                            <div class="teaser_icon main_bg_color2 round offset_icon size_small">
+                                <span class="weight-black">?</span>
+                            </div>
+                            <h4 class="poppins">
+                                Elitr, sed diam nonumy eirmod tempor invidunt?
+                            </h4>
+                            <p>
+                                Lorem ipsum dolor sit amet. Lorem ipsum dolor sitet, consetetur sadipscing elitr, sed diam nonumy.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="teaser with_border rounded text-center lineheight_thin">
+                            <div class="teaser_icon main_bg_color2 round offset_icon size_small">
+                                <span class="weight-black">?</span>
+                            </div>
+                            <h4 class="poppins">
+                                Labore edolore magna aliquyam erat, sed diam?
+                            </h4>
+                            <p>
+                                Emod tempor invidunt ut labore et dolore magna aliquyam erased diam voluptua vero eos et accusam.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row topmargin_30 to_animate" data-animation="fadeInUp">
+                    <div class="col-sm-12 text-center">
+                        <a href="faq.html" class="theme_button color1 wide_button">to faq page</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="cs section_padding_top_30 section_padding_bottom_30" th:replace="~{fragments-main/fragments :: lid}"></section>
+
+        <footer class="page_footer ds section_padding_top_100 section_padding_bottom_65 columns_padding_25" th:replace="~{fragments-main/fragments :: footer}">
+
+        </footer>
+
+        <section class="ls page_copyright section_padding_15" th:replace="~{fragments-main/fragments :: copyright}">
+
+        </section>
+
+    </div>
+    <!-- eof #box_wrapper -->
+</div>
+<!-- eof #canvas -->
+<div th:replace="~{fragments-main/fragments :: script}"></div>
+
+</body>
+
+
+
+</html>

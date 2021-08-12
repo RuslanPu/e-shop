@@ -1,0 +1,356 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="modal">
+    <!-- MODALS -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Связаться с нами</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="/sendEmail">
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Ваше имя</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Ваш email</label>
+                            <input type="email" class="form-control" name="emailTo" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">Мы не передаем данные 3 лицам</div>
+                        </div>
+
+
+                        <button type="submit" class="btn btn-primary">Отправить</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div th:fragment="logo">
+    <section
+            class="page_toplogo table_section table_section_md ls section_padding_top_30 section_padding_bottom_30">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center text-md-left">
+                    <a href="index-2.html" class="logo top_logo">
+                        <img src="images/logo.png" alt="">
+                        <span class="logo_text">
+									<span class="big">
+										Aircool
+										<img src="images/bbb.png" alt=""/>
+									</span>
+									<span class="small-text lightgrey">Conditioning &amp; heating</span>
+								</span>
+                    </a>
+
+                    <!-- header toggler -->
+
+                </div>
+                <div class="col-md-8 text-center text-md-right">
+
+                    <div class="inline-teasers-wrap">
+                        <div class="media small-teaser">
+                            <div class="media-left media-middle">
+                                <div class="teaser_icon highlight size_normal">
+                                    <i class="fa fa-phone"></i>
+                                </div>
+                            </div>
+                            <div class="media-body media-middle">
+                                <h6 class="weight-black text-uppercase bottommargin_5 telephone">
+                                    Call Us: 01 123 456 789
+                                </h6>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+<header class="page_header header_white toggler_left with_top_border" th:fragment="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 display_table">
+
+                <div class="header_mainmenu display_table_cell">
+                    <!-- main nav start -->
+                    <nav class="mainmenu_wrapper">
+                        <ul class="mainmenu nav sf-menu">
+                            <li class="active">
+                                <a href="index.html">Главная</a>
+                            </li>
+
+                            <li>
+                                <a href="shop-right.html">Магазин</a>
+                                <ul>
+                                    <li>
+                                        <a href="shop-right.html">Магазин</a>
+                                    </li>
+                                    <li>
+                                        <a href="shop-product-right.html">Страница товара</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                            <!-- eof shop -->
+
+                            <li>
+                                <a href="about.html">О нас</a>
+                            </li>
+
+
+
+                            <li>
+                                <a href="services.html">Услуги</a>
+                                <ul>
+                                    <li>
+                                        <a href="services.html">Services</a>
+                                    </li>
+                                    <li>
+                                        <a href="service-single.html">Single Service</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+
+
+                            <!-- contacts -->
+                            <li>
+                                <a href="contact.html">Контакты</a>
+                                <ul>
+
+                                    <li>
+                                        <a href="contact2.html">Contact </a>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="#" class="search_modal_button">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <!-- eof contacts -->
+                        </ul>
+                    </nav>
+                    <!-- eof main nav -->
+                    <!-- header toggler -->
+                    <span class="toggle_menu">
+									<span></span>
+								</span>
+                </div>
+
+                <div class="header_right_buttons display_table_cell text-right">
+                    <a href="#appointment" class="theme_button color1 margin_0">Оставить заявку</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="cs section_padding_top_30 section_padding_bottom_30" th:fragment="lid">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-6 to_animate" data-animation="fadeInLeft">
+                <div class="media small-teaser teaser inline-block">
+                    <div class="media-left media-middle">
+                        <div class="teaser_icon light_bg_color big_bg highlight round size_xsmall">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                    </div>
+                    <div class="media-body media-middle">
+                        <span class="fontsize_20 medium black">01 123 456 789</span>
+                        <br>
+                        <span class="small-text small-spacing lightgrey">140 Horizon Circle, San Diego, CA</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 to_animate" data-animation="fadeInLeft">
+                <div class="media small-teaser teaser inline-block">
+                    <div class="media-left media-middle">
+                        <div class="teaser_icon light_bg_color big_bg highlight round size_xsmall">
+                            <i class="fa fa-clock-o"></i>
+                        </div>
+                    </div>
+                    <div class="media-body media-middle">
+                        <span class="fontsize_20 medium black">Open Hours</span>
+                        <br>
+                        <span class="small-text small-spacing lightgrey">Weekdays 8.00-18.00, Sat: closed</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-sm-offset-3 col-md-offset-0 to_animate" data-animation="fadeInRight">
+                <div class="widget widget_mailchimp">
+                    <form class="signup topmargin_10" action="http://html.modernwebtemplates.com/aircool/" method="get">
+                        <!-- <div class="form-group-wrap"> -->
+                        <div class="form-group margin_0">
+                            <input class="mailchimp_email form-control" name="email" type="email" placeholder="Email Address">
+                        </div>
+                        <button type="submit" class="theme_button">Sign Up!</button>
+                        <!-- </div> -->
+                        <div class="response"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="page_footer ds section_padding_top_100 section_padding_bottom_65 columns_padding_25" th:fragment="footer">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-4 col-sm-12 text-center to_animate" data-animation="fadeInUp">
+                <div class="widget">
+                    <a href="index-2.html" class="logo bg_logo bottommargin_25">
+                        <img src="images/logo.png" alt="">
+                        <span class="logo_text">
+										<span class="big grey">Aircool</span>
+										<span class="small-text">Conditioning &amp; heating</span>
+									</span>
+                    </a>
+                    <p>
+                        AirCool Conditioning &amp; Heating specliazes in all HVAC-related services. We offer heating and air conditioning installations.
+                    </p>
+                    <div class="line-height-thin">
+                        <div class="media small-teaser inline-block margin_0">
+                            <div class="media-left media-middle">
+                                <i class="fa fa-map-marker highlight" aria-hidden="true"></i>
+                            </div>
+                            <div class="media-body media-middle">
+                                140 Horizon Circle, San Diego, CA
+                            </div>
+                        </div>
+                        <br>
+                        <div class="media small-teaser inline-block margin_0">
+                            <div class="media-left media-middle">
+                                <i class="fa fa-phone highlight" aria-hidden="true"></i>
+                            </div>
+                            <div class="media-body media-middle">
+                                01 123 456 789
+                            </div>
+                        </div>
+                        <br>
+                        <div class="media small-teaser inline-block margin_0">
+                            <div class="media-left media-middle">
+                                <i class="fa fa-map-marker highlight" aria-hidden="true"></i>
+                            </div>
+                            <div class="media-body media-middle colorlinks">
+                                <a href="mailto:your@mail.com">aircool@support.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="darklinks topmargin_30">
+                        <a href="#" class="social-icon color-bg-icon rounded-icon soc-twitter"></a>
+                        <a href="#" class="social-icon color-bg-icon rounded-icon soc-twitter"></a>
+                        <a href="#" class="social-icon color-bg-icon rounded-icon soc-google"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 text-center to_animate" data-animation="fadeInUp">
+                <div class="widget widget_contact topmargin_10">
+                    <h3>Contact Form</h3>
+                    <form class="contact-form topmargin_45" method="post" action="http://html.modernwebtemplates.com/aircool/">
+                        <p class="form-group">
+                            <label for="footer-name">Name <span class="required">*</span></label>
+                            <input type="text" aria-required="true" size="30" value="" name="name" id="footer-name" class="form-control text-center" placeholder="Full Name">
+                        </p>
+                        <p class="form-group">
+                            <label for="footer-email">Email <span class="required">*</span></label>
+                            <input type="email" aria-required="true" size="30" value="" name="email" id="footer-email" class="form-control text-center" placeholder="Email Address">
+                        </p>
+                        <p class="form-group">
+                            <label for="footer-message">Message</label>
+                            <textarea aria-required="true" rows="3" cols="45" name="message" id="footer-message" class="form-control text-center" placeholder="Message"></textarea>
+                        </p>
+                        <p class="footer_contact-form-submit topmargin_40">
+                            <button type="submit" id="footer_contact_form_submit" name="contact_submit" class="theme_button color1 wide_button">Send Message</button>
+                        </p>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 text-center to_animate" data-animation="fadeInUp">
+
+                <div class="widget widget_recent_entries topmargin_10">
+
+                    <h3 class="widget-title">Latest News</h3>
+                    <ul class="greylinks">
+                        <li>
+                            <p class="margin_0">
+                                <a href="blog-single-right.html">
+                                    At vero eos et accusam et justo duo dolores et ea rebum clita kasd
+                                </a>
+                            </p>
+                            <span class="entry-date highlight2">
+											<time class="entry-date" datetime="2017-03-13T08:50:40+00:00">
+												March 9, 2017
+											</time>
+										</span>
+                        </li>
+                        <li>
+                            <p class="margin_0">
+                                <a href="blog-single-right.html">
+                                    Gubergren, no sea takimata sanctus est lorem ipsum dolor sit amet
+                                </a>
+                            </p>
+                            <span class="entry-date highlight2">
+											<time class="entry-date" datetime="2017-03-13T08:50:40+00:00">
+												March 9, 2017
+											</time>
+										</span>
+                        </li>
+                        <li>
+                            <p class="margin_0">
+                                <a href="blog-single-right.html">
+                                    Lorem ipsum dolor sit amet, consetetur
+                                </a>
+                            </p>
+                            <span class="entry-date highlight2">
+											<time class="entry-date" datetime="2017-03-13T08:50:40+00:00">
+												March 9, 2017
+											</time>
+										</span>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+<section class="ls page_copyright section_padding_15" th:fragment="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <p class="small-text regular grey">&copy; Copyright 2021 All Rights Reserved</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div th:fragment="script">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <script src="js/compressed.js"></script>
+    <script src="js/main.js"></script>
+</div>
+
+</html>
